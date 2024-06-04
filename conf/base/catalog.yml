@@ -12,7 +12,7 @@
 
 01_raw_data:
   type: json.JSONDataset
-  filepath: data/raw_data.json
+  filepath: data/${globals:project_name}/raw_data.json
   metadata:
     kedro-viz:
       layer: 01_raw
@@ -20,7 +20,7 @@
 # Audit data
 01_raw_audit:
   type: pandas.CSVDataset
-  filepath: data/audit_data.csv
+  filepath: data/${globals:project_name}/audit_data.csv
   metadata:
     kedro-viz:
       layer: 01_raw

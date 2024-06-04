@@ -56,18 +56,42 @@ Before running the code, please ensure you have Conda (Miniconda) installed. If 
 To customize the project settings according to your requirements, you need to create a `globals.yml` file in the `conf/local` directory. This file will contain user-specific parameters that the project relies on. Below are the variables that should be defined in the `globals.yml` file along with example values:
 
 ```yaml
+# Project name (data folder name)
+project_name: MSNA_SYR_2023
+
 # Raw Data - Variable survey ID
 raw_data_survey_id: _uuid
 
 # Kobo API 
 asset_uid: XXXXX
-kobo_server: eu.kobotoolbox.org
+kobo_server: kobo.impact-initiatives.org
 kobo_credentials: Token XXXX
 
 # Don't modify url except if Kobo API url have changed
 url: https://${kobo_server}/api/v2/assets/${asset_uid}/data/?format=json
 ```
-Ensure that you replace the placeholder values with your actual survey ID variable name (`raw_data_survey_id`), Kobo project ID (`asset_uid`), Kobo Server (`kobo_server`), and Kobo API credentials (`kobo_credentials`). The `url` variable should typically not be modified unless there are changes to the Kobo API URL.
+Ensure that you replace the placeholder values with your actual survey Project Name (`project_name`), ID variable name (`raw_data_survey_id`), Kobo project ID (`asset_uid`), Kobo Server (`kobo_server`), and Kobo API credentials (`kobo_credentials`). The `url` variable should typically not be modified unless there are changes to the Kobo API URL.
+
+### Retrieving Kobo Token
+
+### Method 1: URL
+
+You can retrieve your Kobo token by accessing the following URL in your web browser:
+
+```yaml
+https://[kpi-url]/token/?format=json
+```
+Replace `[kpi-url]` with the URL of your Kobo server (e.g. `kobo.impact-initiatives.org`). This URL will provide you with your Kobo token in JSON format.
+
+### Method 2: Graphical Interface
+
+Alternatively, you can obtain your Kobo token through the graphical interface:
+
+1. Log in to your Kobo account on the Kobo website.
+2. Navigate to your account settings or profile section.
+3. Look for the option `security` to view or manage your `API Key`.
+4. Copy your Kobo token from the provided interface.
+
 
 ## How to run the code
 
@@ -79,7 +103,7 @@ kedro run
 
 ## Data Access
 
-The project's data is accessible within the `data` directory. It contains two main datasets:
+The project's data is accessible within the `data/{project_name}` directory. It contains two main datasets:
 
 - **Concatenated Audit Files**: The concatenated audit files are stored in `audit_data.csv`. These files have been aggregated to provide a comprehensive overview of the audit data. This consolidated format facilitates easier analysis and exploration of the audit information.
 
@@ -89,5 +113,9 @@ The project's data is accessible within the `data` directory. It contains two ma
 
 - **Author:** Quentin Villotta
 - **Date:** June 7, 2024
-- **Technology:** Python
-- **Main Libraries:**  Kedro, Pandas, Dask, Distributed
+
+### System Requirements
+
+- **Python Version:** Python >= 3.10
+
+Please ensure that you have Python version 3.10 or higher installed on your system before running the project.

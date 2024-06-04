@@ -1,4 +1,6 @@
-kedro=0.19.6
-pandas=2.2.1
-dask=2024.5.0 
-distributed=2024.5.0
+kedro==0.19.6
+kedro-datasets==3.0.1
+pandas==2.2.1
+dask==2024.5.0 
+distributed==2024.5.0
+bokeh==3.4.0
