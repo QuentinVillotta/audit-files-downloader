@@ -64,7 +64,7 @@ raw_data_survey_id: _uuid
 
 # Kobo API 
 asset_uid: XXXXX
-kobo_server: kobo.impact-initiatives.org
+kobo_server: eu.kobotoolbox.org
 kobo_credentials: Token XXXX
 
 # Don't modify url except if Kobo API url have changed
@@ -74,16 +74,16 @@ Ensure that you replace the placeholder values with your actual survey Project N
 
 ### Retrieving Kobo Token
 
-### Method 1: URL
+#### Method 1: URL
 
 You can retrieve your Kobo token by accessing the following URL in your web browser:
 
 ```yaml
 https://[kpi-url]/token/?format=json
 ```
-Replace `[kpi-url]` with the URL of your Kobo server (e.g. `kobo.impact-initiatives.org`). This URL will provide you with your Kobo token in JSON format.
+Replace `[kpi-url]` with the URL of your Kobo server (e.g. `eu.kobotoolbox.org`). This URL will provide you with your Kobo token in JSON format.
 
-### Method 2: Graphical Interface
+#### Method 2: Graphical Interface
 
 Alternatively, you can obtain your Kobo token through the graphical interface:
 
@@ -112,7 +112,7 @@ The project's data is accessible within the `data/{project_name}` directory. It 
 ## Project Information
 
 - **Author:** Quentin Villotta
-- **Date:** June 7, 2024
+- **Date:** June 4, 2024
 
 ### System Requirements
 
