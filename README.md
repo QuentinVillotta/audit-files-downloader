@@ -11,9 +11,9 @@ In order to get the best out of the template:
 
 ## Setup Instructions
 
-Cloned the GitHub repository to your local machine 
+To get started, clone the GitHub repository to your local machine.
 
-Before running the code, you have two options for installing dependencies: using either `pip` or `conda`.
+Before running the code, you have two options for installing python dependencies: using either `pip` or `conda`.
 
 ### Dependencies Installation with Pip
 
@@ -64,7 +64,7 @@ kobo_credentials: Token XXXX
 # Don't modify url except if Kobo API url have changed
 url: https://${kobo_server}/api/v2/assets/${asset_uid}/data/?format=json
 ```
-Ensure that you replace the placeholder values with your actual survey ID variable name (`raw_data_survey_id`), Kobo ID project (`asset_uid`), Kobo Server (`kobo_server`) Kobo API credentials (`kobo_credentials`). The url variable should typically not be modified unless there are changes to the Kobo API URL.
+Ensure that you replace the placeholder values with your actual survey ID variable name (`raw_data_survey_id`), Kobo project ID (`asset_uid`), Kobo Server (`kobo_server`), and Kobo API credentials (`kobo_credentials`). The `url` variable should typically not be modified unless there are changes to the Kobo API URL.
 
 ## How to run the code
 
