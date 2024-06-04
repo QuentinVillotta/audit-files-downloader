@@ -1,4 +1,4 @@
-# audit_files_downloader
+# Audit Files Downloader Tool
 
 ## Rules and guidelines
 
@@ -9,11 +9,11 @@ In order to get the best out of the template:
 * Don't commit data to your repository
 * Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/globals.yml`
 
-### Setup Instructions
+## Setup Instructions
 
-Before running the code, you have two options for installing dependencies: using either *pip* or *conda*.
+Before running the code, you have two options for installing dependencies: using either `pip` or `conda`.
 
-#### Dependencies Installation with Pip
+### Dependencies Installation with Pip
 
 To install them, run the following command on `pip_requirements_.txt` file located in the `conf` directory:
 
@@ -21,7 +21,7 @@ To install them, run the following command on `pip_requirements_.txt` file locat
 pip install -r conf/pip_requirements_.txt
 ```
 
-#### Dependencies Installation with Conda
+### Dependencies Installation with Conda
 
 Alternatively, you can use conda to manage dependencies.
 Before running the code, please ensure you have Conda (Miniconda) installed. If you don't have it installed, follow the steps below:
@@ -46,7 +46,7 @@ Before running the code, please ensure you have Conda (Miniconda) installed. If 
      conda activate audit-files-downloader
      ```
 
-## How to run the pipeline
+## How to run the code
 
 You can run the pipeline with the following command:
 
@@ -58,8 +58,7 @@ kedro run
 
 The project's data is accessible within the `data` directory. It contains two main datasets:
 
-- **Kobo Raw Data**: The raw data from Kobo is stored in `raw_data.json`. To ensure compatibility with nested fields and prevent format errors when loading the data into Python or R, it has been preserved in JSON format. This format ensures that nested structures are maintained accurately during loading and processing.
-
 - **Concatenated Audit Files**: The concatenated audit files are stored in `audit_data.csv`. These files have been aggregated to provide a comprehensive overview of the audit data. This consolidated format facilitates easier analysis and exploration of the audit information.
 
-Accessing the data in the `data` directory allows users to utilize both the original raw data and the processed audit files effectively for their analysis and research purposes.
+- **Kobo Raw Data**: The raw data from Kobo is stored in `raw_data.json`. To ensure compatibility with nested fields and prevent format errors when loading the data into Python or R, it has been preserved in JSON format. This format ensures that nested structures are maintained accurately during loading and processing.
+
