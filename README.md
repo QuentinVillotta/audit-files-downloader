@@ -11,6 +11,8 @@ In order to get the best out of the template:
 
 ## Setup Instructions
 
+Cloned the GitHub repository to your local machine 
+
 Before running the code, you have two options for installing dependencies: using either `pip` or `conda`.
 
 ### Dependencies Installation with Pip
@@ -45,6 +47,24 @@ Before running the code, please ensure you have Conda (Miniconda) installed. If 
      ```sh
      conda activate audit-files-downloader
      ```
+
+## User Configuration
+
+To customize the project settings according to your requirements, you need to create a `globals.yml` file in the `conf/local` directory. This file will contain user-specific parameters that the project relies on. Below are the variables that should be defined in the `globals.yml` file along with example values:
+
+```yaml
+# Raw Data - Variable survey ID
+raw_data_survey_id: _uuid
+
+# Kobo API 
+asset_uid: XXXXX
+kobo_server: eu.kobotoolbox.org
+kobo_credentials: Token XXXX
+
+# Don't modify url except if Kobo API url have changed
+url: https://${kobo_server}/api/v2/assets/${asset_uid}/data/?format=json
+```
+Ensure that you replace the placeholder values with your actual survey ID variable name (`raw_data_survey_id`), Kobo ID project (`asset_uid`), Kobo Server (`kobo_server`) Kobo API credentials (`kobo_credentials`). The url variable should typically not be modified unless there are changes to the Kobo API URL.
 
 ## How to run the code
 
