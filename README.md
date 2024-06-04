@@ -1,11 +1,5 @@
 # audit_files_downloader
 
-## Overview
-
-This is your new Kedro project, which was generated using `kedro 0.19.3`.
-
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
-
 ## Rules and guidelines
 
 In order to get the best out of the template:
@@ -13,87 +7,59 @@ In order to get the best out of the template:
 * Don't remove any lines from the `.gitignore` file we provide
 * Make sure your results can be reproduced by following a data engineering convention
 * Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/globals.yml`
 
-## How to install dependencies
+### Setup Instructions
 
-Declare any dependencies in `requirements.txt` for `pip` installation.
+Before running the code, you have two options for installing dependencies: using either *pip* or *conda*.
 
-To install them, run:
+#### Dependencies Installation with Pip
+
+To install them, run the following command on `pip_requirements_.txt` file located in the `conf` directory:
 
 ```
-pip install -r requirements.txt
+pip install -r conf/pip_requirements_.txt
 ```
 
-## How to run your Kedro pipeline
+#### Dependencies Installation with Conda
 
-You can run your Kedro project with:
+Alternatively, you can use conda to manage dependencies.
+Before running the code, please ensure you have Conda (Miniconda) installed. If you don't have it installed, follow the steps below:
+
+1. **Download and Install Miniconda**:
+   - Visit the [Miniconda download page](https://docs.conda.io/en/latest/miniconda.html) and download the installer for your operating system.
+   - Follow the installation instructions provided on the Miniconda website.
+
+2. **Create the Conda Environment**:
+   - Open a terminal or command prompt.
+   - Navigate to the root directory of the project.
+   - Run the following command to create a new Conda environment from the `conda_environment.yml` file located in the `conf` directory:
+
+     ```sh
+     conda env create -f conf/conda_environment.yml
+     ```
+
+3. **Activate the Conda Environment**:
+   - After the environment is created, activate it by running:
+
+     ```sh
+     conda activate audit-files-downloader
+     ```
+
+## How to run the pipeline
+
+You can run the pipeline with the following command:
 
 ```
 kedro run
 ```
 
-## How to test your Kedro project
+## Data Access
 
-Have a look at the file `src/tests/test_run.py` for instructions on how to write your tests. You can run your tests as follows:
+The project's data is accessible within the `data` directory. It contains two main datasets:
 
-```
-pytest
-```
+- **Kobo Raw Data**: The raw data from Kobo is stored in `raw_data.json`. To ensure compatibility with nested fields and prevent format errors when loading the data into Python or R, it has been preserved in JSON format. This format ensures that nested structures are maintained accurately during loading and processing.
 
-You can configure the coverage threshold in your project's `pyproject.toml` file under the `[tool.coverage.report]` section.
+- **Concatenated Audit Files**: The concatenated audit files are stored in `audit_data.csv`. These files have been aggregated to provide a comprehensive overview of the audit data. This consolidated format facilitates easier analysis and exploration of the audit information.
 
-
-## Project dependencies
-
-To see and update the dependency requirements for your project use `requirements.txt`. You can install the project requirements with `pip install -r requirements.txt`.
-
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
-
-## How to work with Kedro and notebooks
-
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `context`, 'session', `catalog`, and `pipelines`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
-
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
-
-```
-pip install jupyter
-```
-
-After installing Jupyter, you can start a local notebook server:
-
-```
-kedro jupyter notebook
-```
-
-### JupyterLab
-To use JupyterLab, you need to install it:
-
-```
-pip install jupyterlab
-```
-
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html)
+Accessing the data in the `data` directory allows users to utilize both the original raw data and the processed audit files effectively for their analysis and research purposes.

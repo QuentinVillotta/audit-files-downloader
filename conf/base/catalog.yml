@@ -1,0 +1,26 @@
+# raw data
+00_kobo_api_raw_data:
+  type: api.APIDataset
+  url: ${globals:url}
+  method: GET
+  load_args:
+    headers:
+      Authorization: ${globals:kobo_credentials}
+  metadata:
+    kedro-viz:
+      layer: 01_raw
+
+01_raw_data:
+  type: json.JSONDataset
+  filepath: data/raw_data.json
+  metadata:
+    kedro-viz:
+      layer: 01_raw
+
+# Audit data
+01_raw_audit:
+  type: pandas.CSVDataset
+  filepath: data/audit_data.csv
+  metadata:
+    kedro-viz:
+      layer: 01_raw

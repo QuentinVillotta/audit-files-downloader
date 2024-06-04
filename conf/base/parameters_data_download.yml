@@ -1,0 +1,14 @@
+# Kobo API Keys ---
+## Raw data
+api_data_key: results
+api_audit_location_key: _attachments
+api_audit_url_key: download_url
+
+# Dask Cluster Params ---
+dask_nb_worker: 10
+dask_nb_thread_per_worker: 10
+
+# From globals.yml 
+raw_data_survey_id:  ${globals:raw_data_survey_id}
+kobo_credentials: ${globals:kobo_credentials}
+
