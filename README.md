@@ -1,5 +1,8 @@
 # Audit Files Downloader Tool
 
+## Overview
+This tool provides a distributed solution for downloading and concatenating KoboToolbox audit files using the Kobo API. Leveraging Dask for distributed computing, the tool efficiently handles large-scale data processing tasks. 
+
 ## Rules and guidelines
 
 In order to get the best out of the template:
@@ -82,3 +85,9 @@ The project's data is accessible within the `data` directory. It contains two ma
 
 - **Kobo Raw Data**: The raw data from Kobo is stored in `raw_data.json`. To ensure compatibility with nested fields and prevent format errors when loading the data into Python or R, it has been preserved in JSON format. This format ensures that nested structures are maintained accurately during loading and processing.
 
+## Project Information
+
+- **Author:** Quentin Villotta
+- **Date:** June 7, 2024
+- **Technology:** Python
+- **Main Libraries:**  Kedro, Pandas, Dask, Distributed
